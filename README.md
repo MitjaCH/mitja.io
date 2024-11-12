@@ -1,27 +1,52 @@
-# Portfolio
+# mitja.io
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+This repository contains the source code for my personal portfolio website built with Angular. The site showcases my skills, projects, and professional experience to provide a comprehensive view of my work.
 
-## Development server
+## 🌐 Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+You can view the live version of my portfolio at [mitja.io](https://mitja.io).
 
-## Code scaffolding
+## 📂 Project Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Components**:
+  - **NavbarComponent**: The navigation bar at the top of the page for easy access to different sections.
+  - **HeaderComponent**: The main header or introduction section with an overview of my professional background.
+- **assets/**: Folder for images, styles, and any additional assets.
 
-## Build
+## 🛠 Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This portfolio is built with:
+- **Angular**: For building a dynamic, single-page application.
+- **TypeScript**: Used in all Angular development for safer, more robust code.
+- **HTML5 & CSS & Tailwindcss**: For structure and styling of the website.
+- **Angular CLI**: For development and build tools.
 
-## Running unit tests
+## ✨ Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Modular Design with Components**: Navbar, header, and contact form are built as Angular components for scalability and reusability.
 
-## Running end-to-end tests
+##  Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To run this project locally:
 
-## Further help
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/MitjaCH/mitja-io.git
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. **Navigate into the project directory:**
+   ```bash
+   cd mitja-io
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server**:
+   ```bash
+   ng serve
+   ```
+
+5. **Open your browser** and go to `http://localhost:4200` to view the site locally.
