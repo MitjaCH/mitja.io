@@ -1,14 +1,35 @@
 <header id="navbar" class="fixed w-full top-0 z-50 navbar-transition backdrop-blur-lg">
-    <div class="container mx-auto px-4 py-4 select-none flex flex-row">
+  <div class="container mx-auto px-4 py-4 select-none flex flex-row items-center justify-between">
+    <div class="flex items-center">
       <div class="logo">
-        <img src="#" alt="logo">
+        <img src="#" alt="logo" class="h-10">
       </div>
-      <h1 class="text-xl font-semibold text-white cursor-pointer">mitja.io</h1>
-      <div class="flex-grow"></div>
-      <ul class="flex flex-row space-x-5 mr-10">
-          <li>NavItem1</li>
-          <li>NavItem2</li>
-          <li>NavItem3</li>
-      </ul>
+      <h1 class="text-xl font-semibold text-white cursor-pointer ml-4">mitja.io</h1>
     </div>
+
+    <button class="lg:hidden text-white p-2" (click)="toggleSidebar()">
+      <i class="pi pi-bars"></i>
+    </button>
+
+    <ul class="hidden lg:flex flex-row space-x-5 mr-10">
+      <li><a href="#" class="text-white">NavItem1</a></li>
+      <li><a href="#" class="text-white">NavItem2</a></li>
+      <li><a href="#" class="text-white">NavItem3</a></li>
+    </ul>
+  </div>
 </header>
+
+@if (sidebarVisible) {
+  <div id="sidebar" class="fixed top-0 right-0 w-64 h-full text-white p-4 z-40 transition-transform transform lg:hidden">
+    <ul class="space-y-4">
+      <li><a href="#" class="text-white">NavItem1</a></li>
+      <li><a href="#" class="text-white">NavItem2</a></li>
+      <li><a href="#" class="text-white">NavItem3</a></li>
+    </ul>
+    <button class="absolute top-4 right-4 text-white" (click)="closeSidebar()">
+      <i class="pi pi-times"></i>
+    </button>
+  </div>
+
+  <div class="fixed inset-0 bg-black opacity-50 z-30" (click)="closeSidebar()"></div>
+}
