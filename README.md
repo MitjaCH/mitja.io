@@ -11,6 +11,7 @@ You can view the live version of my portfolio at [mitja.io](https://mitja.io).
 - **Components**:
   - **NavbarComponent**: The navigation bar at the top of the page for easy access to different sections.
   - **HeaderComponent**: The main header or introduction section with an overview of my professional background.
+  - **FooterComponent**: The footer bar at the bottom of the page with social links
 - **assets/**: Folder for images, styles, and any additional assets.
 
 ## 🛠 Tech Stack
