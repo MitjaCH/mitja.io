@@ -8,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  menu_icon: string = 'bi bi-list';
+  menuVisible: boolean = false;
 
+  openMenu() {
+    this.menuVisible =! this.menuVisible;
+    this.menu_icon = this.menuVisible ? 'bi bi-x' : 'bi bi-list';
+  }
+
+  closeMenu() {
+    this.menuVisible = false;
+    this.menu_icon = 'bi bi-list';
+  }
 }
