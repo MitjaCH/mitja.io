@@ -1,23 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef, inject } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  menu_icon: string = 'bi bi-list';
-  menuVisible: boolean = false;
+  sidebarVisible: boolean = false;
 
-  openMenu() {
-    this.menuVisible =! this.menuVisible;
-    this.menu_icon = this.menuVisible ? 'bi bi-x' : 'bi bi-list';
+  private cdr = inject(ChangeDetectorRef);
+
+  toggleSidebar() {
+    this.sidebarVisible = !this.sidebarVisible;
+    console.log(this.sidebarVisible ? 'Sidebar is visible' : 'Sidebar is not visible');
+    this.cdr.detectChanges();
   }
 
-  closeMenu() {
-    this.menuVisible = false;
-    this.menu_icon = 'bi bi-list';
+  openSidebar() {
+    this.sidebarVisible = true;
+    console.log('Sidebar is visible');
+    this.cdr.detectChanges();
+  }
+
+  closeSidebar() { 
+    this.sidebarVisible = false;
+    console.log('Sidebar is not visible');
+    this.cdr.detectChanges();
   }
 }
