@@ -7,9 +7,33 @@
       <h1 class="text-xl font-semibold text-white cursor-pointer ml-4">mitja.io</h1>
     </div>
 
-    <button class="lg:hidden text-white p-2" (click)="toggleSidebar()">
-      <i class="pi pi-bars"></i>
-    </button>
+    <button
+    class="lg:hidden text-white p-2 relative z-50 focus:outline-none"
+    (click)="toggleSidebar()"
+  >
+    <!-- Top Line -->
+    <span
+      class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"
+      [ngStyle]="{
+        transform: sidebarVisible ? 'rotate(45deg) translateY(6px)' : 'rotate(0)',
+        position: sidebarVisible ? 'absolute' : 'static'
+      }"
+    ></span>
+    <!-- Middle Line -->
+    <span
+      class="block w-6 h-0.5 bg-white transition-opacity duration-300 ease-in-out my-1"
+      [style.opacity]="sidebarVisible ? '0' : '1'"
+    ></span>
+    <!-- Bottom Line -->
+    <span
+      class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"
+      [ngStyle]="{
+        transform: sidebarVisible ? 'rotate(-45deg) translateY(-6px)' : 'rotate(0)',
+        position: sidebarVisible ? 'absolute' : 'static'
+      }"
+    ></span>
+  </button>
+  
 
     <ul class="hidden lg:flex flex-row space-x-5 mr-10">
       <li><a href="#" class="text-white">About</a></li>
@@ -19,17 +43,23 @@
   </div>
 </header>
 
-@if (sidebarVisible) {
-  <div id="sidebar" class="fixed top-0 right-0 w-64 h-full text-white p-4 z-40 transition-transform transform lg:hidden">
-    <ul class="space-y-4">
-      <li><a href="#" class="text-white">NavItem1</a></li>
-      <li><a href="#" class="text-white">NavItem2</a></li>
-      <li><a href="#" class="text-white">NavItem3</a></li>
-    </ul>
-    <button class="absolute top-4 right-4 text-white" (click)="closeSidebar()">
-      <i class="pi pi-times"></i>
-    </button>
-  </div>
+<!-- Sidebar -->
+<div
+  id="sidebar"
+  class="fixed top-20 right-0 w-64 h-full text-white p-4 z-40 transition-transform transform lg:hidden"
+  [ngClass]="{ 'translate-x-0': sidebarVisible, 'translate-x-full': !sidebarVisible }"
+>
+  <ul class="divide-y divide-white">
+    <li class="py-2"><a href="#" class="text-white">About</a></li>
+    <li class="py-2"><a href="#" class="text-white">Projects</a></li>
+    <li class="py-2"><a href="#" class="text-white">Contact</a></li>
+  </ul>
+</div>
 
-  <div class="fixed inset-0 bg-black opacity-50 z-30" (click)="closeSidebar()"></div>
-}
+
+<!-- Overlay -->
+<div
+  class="fixed inset-0 bg-black transition-opacity z-30"
+  [ngClass]="{ 'opacity-50': sidebarVisible, 'opacity-0 pointer-events-none': !sidebarVisible }"
+  (click)="closeSidebar()"
+></div>
