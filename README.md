@@ -1,4 +1,6 @@
-# mitja.io
+![mitja.io](https://socialify.git.ci/MitjaCH/mitja.io/image?description=1&language=1&name=1&owner=1&pattern=Transparent&pulls=1&stargazers=1&theme=Dark)
+
+## Description
 
 This repository contains the source code for my personal portfolio website built with Angular. The site showcases my skills, projects, and professional experience to provide a comprehensive view of my work.
 
