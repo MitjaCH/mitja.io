@@ -7,48 +7,35 @@
       <h1 class="text-xl font-semibold text-white cursor-pointer ml-4">mitja.io</h1>
     </div>
 
-    <button
-    class="lg:hidden text-white p-2 relative z-50 focus:outline-none"
-    (click)="toggleSidebar()"
-  >
-    <!-- Top Line -->
-    <span
-      class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"
-      [ngStyle]="{
+    <button class="lg:hidden text-white p-2 relative z-50 focus:outline-none" (click)="toggleSidebar()">
+      <!-- Top Line -->
+      <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out" [ngStyle]="{
         transform: sidebarVisible ? 'rotate(45deg) translateY(6px)' : 'rotate(0)',
         position: sidebarVisible ? 'absolute' : 'static'
-      }"
-    ></span>
-    <!-- Middle Line -->
-    <span
-      class="block w-6 h-0.5 bg-white transition-opacity duration-300 ease-in-out my-1"
-      [style.opacity]="sidebarVisible ? '0' : '1'"
-    ></span>
-    <!-- Bottom Line -->
-    <span
-      class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"
-      [ngStyle]="{
+      }"></span>
+      <!-- Middle Line -->
+      <span class="block w-6 h-0.5 bg-white transition-opacity duration-300 ease-in-out my-1"
+        [style.opacity]="sidebarVisible ? '0' : '1'"></span>
+      <!-- Bottom Line -->
+      <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out" [ngStyle]="{
         transform: sidebarVisible ? 'rotate(-45deg) translateY(-6px)' : 'rotate(0)',
         position: sidebarVisible ? 'absolute' : 'static'
-      }"
-    ></span>
-  </button>
-  
+      }"></span>
+    </button>
+
 
     <ul class="hidden lg:flex flex-row space-x-5 mr-10">
-      <li><a href="#" class="text-white">About</a></li>
-      <li><a href="#" class="text-white">Projects</a></li>
-      <li><a href="#" class="text-white">Contact</a></li>
+      <li><a href="#" class="text-white nav-link relative hover:text-cyan-300">About</a></li>
+      <li><a href="#" class="text-white nav-link relative hover:text-cyan-300">Projects</a></li>
+      <li><a href="#" class="text-white nav-link relative hover:text-cyan-300">Contact</a></li>
     </ul>
+
   </div>
 </header>
 
 <!-- Sidebar -->
-<div
-  id="sidebar"
-  class="fixed top-20 right-0 w-64 h-full text-white p-4 z-40 transition-transform transform lg:hidden"
-  [ngClass]="{ 'translate-x-0': sidebarVisible, 'translate-x-full': !sidebarVisible }"
->
+<div id="sidebar" class="fixed top-20 right-0 w-64 h-full text-white p-4 z-40 transition-transform transform lg:hidden"
+  [ngClass]="{ 'translate-x-0': sidebarVisible, 'translate-x-full': !sidebarVisible }">
   <ul class="divide-y divide-white">
     <li class="py-2"><a href="#" class="text-white">About</a></li>
     <li class="py-2"><a href="#" class="text-white">Projects</a></li>
@@ -58,8 +45,6 @@
 
 
 <!-- Overlay -->
-<div
-  class="fixed inset-0 bg-black transition-opacity z-30"
+<div class="fixed inset-0 bg-black transition-opacity z-30"
   [ngClass]="{ 'opacity-50': sidebarVisible, 'opacity-0 pointer-events-none': !sidebarVisible }"
-  (click)="closeSidebar()"
-></div>
+  (click)="closeSidebar()"></div>
